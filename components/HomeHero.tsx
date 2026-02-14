@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+
 
 // YOU CAN USE CSS MODULE FOR FONT WEIGHTS IF NEEDED (not required for demo).
 // You can also include the font links in your document head as previously described.
@@ -22,9 +24,14 @@ export default function HomeHero() {
 
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-14 py-8">
-        <a href="#home" className="flex items-end gap-1 text-3xl text-white font-serif font-extrabold tracking-widest">
-          Mystic
-          <span className="text-blue-400 text-5xl" style={{lineHeight:0}}>.</span>
+        <a href="#home" className="flex items-center">
+          <Image
+            src="/images/logo.jpg"
+            alt="Mystic Woodwork Logo"
+            width={120}
+            height={60}
+            className="object-contain hover:opacity-80 transition"
+          />
         </a>
         <div className="hidden md:flex gap-12 text-sm uppercase text-white tracking-wider font-light">
           <a href="#home" className="hover:text-blue-300 transition">Home</a>
