@@ -48,7 +48,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="bg-[#fdfdfd] min-h-screen py-20 md:py-32">
+    <section id="faq" className="bg-[#fdfdfd] min-h-screen py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
           {/* FAQ Title */}

@@ -1,18 +1,15 @@
 "use client";
 import { useState } from "react";
 
-// YOU CAN USE CSS MODULE FOR FONT WEIGHTS IF NEEDED (not required for demo).
-// You can also include the font links in your document head as previously described.
-
 export default function HomeHero() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col font-sans">
+    <div className="relative min-h-screen w-full flex flex-col font-sans" id="home">
       {/* Background image with dark overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/bed.jpg" // CHANGE TO YOUR BG
+          src="/images/bed.jpg"
           alt="Mystic ArtWoods Hero"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center" }}
@@ -35,13 +32,12 @@ export default function HomeHero() {
         <a href="#contact" className="hidden md:inline px-6 py-2 border border-blue-200 text-blue-200 hover:bg-blue-200 hover:text-black transition rounded tracking-widest uppercase font-bold text-xs" style={{letterSpacing:"0.1em"}}>
           Contact Us
         </a>
-        {/* Mobile menu button (optional, can add dropdown logic) */}
       </nav>
 
       {/* Hero Content */}
       <div className="relative flex flex-1 flex-col items-center justify-center z-10 mt-12 md:mt-0 text-center">
         <p className="uppercase text-sm tracking-widest text-blue-200 font-medium mb-4" style={{letterSpacing: "0.15em"}}>
-          Crafting Nature’s Elegance into Artful Living
+          Crafting Nature's Elegance into Artful Living
         </p>
         <h1 className="text-white font-serif font-bold text-[3rem] sm:text-[5rem] md:text-[7rem] leading-none mb-2 drop-shadow-lg">
           Build <span className="text-blue-400 italic font-bold">Artful</span><br />

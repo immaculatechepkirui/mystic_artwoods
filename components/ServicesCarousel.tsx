@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useCallback } from "react";
 
-// Edit this list to match your product images
 const items = [
   { src: "/images/bed.jpg", name: "Mahogany Bed", group: "Beds" },
   { src: "/images/console.jpg", name: "Rattan Console", group: "Console Tables" },
@@ -31,7 +30,6 @@ function mod(n: number, m: number) {
 export default function ServicesCarousel() {
   const [index, setIndex] = useState(0);
 
-  // Keyboard arrow nav
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") setIndex(i => mod(i - 1, items.length));
@@ -41,7 +39,6 @@ export default function ServicesCarousel() {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
-  // Swipe (touch) support
   useEffect(() => {
     let startX = 0;
     let endX = 0;
@@ -59,9 +56,7 @@ export default function ServicesCarousel() {
     };
   }, []);
 
-  // Fancy 3D carousel placement
   function cardClass(offset: number) {
-    // offset: 0=center | -1 left | +1 right | others hidden/stacked for effect
     if (offset === 0) return "z-10 scale-110 shadow-2xl";
     if (offset === -1) return "-translate-x-[60%] -rotate-y-6 z-0 opacity-70 scale-90";
     if (offset === 1) return "translate-x-[60%] rotate-y-6 z-0 opacity-70 scale-90";
@@ -71,7 +66,7 @@ export default function ServicesCarousel() {
   }
 
   return (
-    <section className="w-full overflow-x-hidden pt-20 pb-16 bg-white relative">
+    <section id="gallery" className="w-full overflow-x-hidden pt-20 pb-16 bg-white relative">
       <h2
         className="text-[2rem] md:text-[5rem] lg:text-[7.5rem] font-black uppercase tracking-tighter text-center absolute left-1/2 top-10 -translate-x-1/2 pointer-events-none whitespace-nowrap select-none"
         style={{
@@ -96,7 +91,6 @@ export default function ServicesCarousel() {
           {items.map((item, i) => {
             let offset = i - index;
             const n = items.length;
-            // Wrap around
             if (offset > n / 2) offset -= n;
             if (offset < -n / 2) offset += n;
             return (
