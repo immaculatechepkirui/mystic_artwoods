@@ -1,11 +1,12 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function HomeHero() {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col font-sans" id="home">
+    <div className="relative min-h-screen w-full flex flex-col font-nunito" id="home">
       {/* Background image with dark overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -19,9 +20,14 @@ export default function HomeHero() {
 
       {/* Navbar */}
       <nav className="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-14 py-8">
-        <a href="#home" className="flex items-end gap-1 text-3xl text-white font-serif font-extrabold tracking-widest">
-          Mystic Woodwork
-          <span className="text-blue-400 text-5xl" style={{lineHeight:0}}>.</span>
+        <a href="#home" className="flex items-center gap-2">
+          <Image
+            src="/images/logo.jpg"
+            alt="Mystic Woodwork Logo"
+            width={50}
+            height={50}
+            className="object-contain"
+          />
         </a>
         <div className="hidden md:flex gap-12 text-sm uppercase text-white tracking-wider font-light">
           <a href="#home" className="hover:text-blue-300 transition">Home</a>
